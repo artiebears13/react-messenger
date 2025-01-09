@@ -1,0 +1,20 @@
+@use '../../../variables';
+@use '../../../mixins';
+@import "../../../pages/SelfProfilePage/ProfilePage.module.scss";
+
+
+.ProfileBirthdayInput{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  color: variables.$color-text;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color-scheme: variables.$theme;
+}
+
+/* Скрываем иконку для Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+  color: white;
+}

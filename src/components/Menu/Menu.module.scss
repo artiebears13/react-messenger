@@ -1,0 +1,77 @@
+@use "sass:color";
+@use "../../mixins";
+@use "../../variables";
+
+.menuBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: variables.$color-primary;
+  @include mixins.border-radius(0 variables.$border-radius-small variables.$border-radius-small 0);
+  @include mixins.box-shadow(0, 4px, 8px, rgba(variables.$color-dark, 0.2));
+  z-index: 10;
+  width: 200px;
+  height: 100vh;
+  @include mixins.flex-center(column, flex-start, center);
+}
+
+.userData {
+  @include mixins.flex-center(column, flex-start, center);
+  cursor: pointer;
+  padding: 20px 0;
+  width: 100%;
+  &:hover{
+    background-color: variables.$color-primary-darken;
+  }
+}
+
+.userName {
+  color: variables.$color-light;
+}
+
+.menuItem {
+  width: 100%;
+  text-align: start;
+  padding: 10px;
+  color: variables.$color-light;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid variables.$color-primary-darken;
+  @include mixins.flex-center(row, flex-start, center);
+  gap: 10px;
+
+  &:hover {
+    background-color: variables.$color-primary-darken;;
+  }
+  &.disabled{
+    cursor: not-allowed;
+    &:hover{
+      background-color: transparent;
+    }
+  }
+}
+
+.slideInLeft {
+  @include mixins.animation(slideInLeft, variables.$transition-slow, cubic-bezier(0.250, 0.460, 0.450, 0.940));
+}
+
+@include mixins.keyframes(slideInLeft) {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

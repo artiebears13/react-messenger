@@ -1,0 +1,67 @@
+@use '../../../variables';
+@use '../../../mixins';
+@import "../../../index";
+
+.alert{
+  &Container{
+    position: absolute;
+    top: 20px;
+    width: 200px;
+    left: calc(50vw - 100px);
+    background-color: red;
+    color: white;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 15px;
+    @include mixins.flex-center(column);
+
+  }
+  &CloseButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    &:hover{
+      cursor: pointer;
+      color: variables.$color-dark;
+    }
+  }
+  &Header{
+    font-size: 15px;
+  }
+  &Text{
+    font-size: 12px;
+  }
+}
+
+
+.slideInTop {
+  -webkit-animation: slideInTop 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slideInTop 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slideInTop {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInTop {
+  0% {
+    -webkit-transform: translateY(-1000px);
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

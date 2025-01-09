@@ -1,0 +1,12 @@
+@use '../../../variables';
+@use '../../../mixins';
+@import "../../../pages/SelfProfilePage/SelfProfilePage.module.scss";
+
+
+.ProfileTextItemInput{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  color: variables.$color-text;
+}

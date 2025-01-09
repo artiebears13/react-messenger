@@ -1,0 +1,48 @@
+@use "variables";
+
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin button-reset {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin disabled(){
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@mixin box-shadow($x: 0, $y: 1px, $blur: 3px, $color: rgba(variables.$color-dark, 0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin transition($property: all, $duration: variables.$transition-fast, $timing-function: ease) {
+  transition: $property $duration $timing-function;
+}
+
+@mixin animation($name, $duration: variables.$transition-medium, $timing-function: ease, $fill-mode: both) {
+  animation: $name $duration $timing-function $fill-mode;
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin media($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

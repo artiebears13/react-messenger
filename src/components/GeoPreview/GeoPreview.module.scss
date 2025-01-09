@@ -1,0 +1,9 @@
+@use '../../variables';
+
+.GeoPreview{
+  border-radius: 15px;
+  overflow: hidden;
+  border: none;
+  border: 1px solid variables.$color-chat-border;
+
+}

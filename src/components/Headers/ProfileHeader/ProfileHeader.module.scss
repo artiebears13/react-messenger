@@ -1,0 +1,14 @@
+@use '../../../mixins';
+@use '../../../variables';
+@import "../../../index";
+
+.editButton{
+    @include mixins.button-reset;
+}
+.logout{
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+    }
+}

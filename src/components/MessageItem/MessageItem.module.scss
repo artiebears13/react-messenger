@@ -1,0 +1,129 @@
+@use '../../variables';
+@use '../../mixins';
+
+.messageItem {
+  background-color: lightblue;
+  max-width: 60%;
+  margin-bottom: 10px;
+  padding: 10px 10px 1px 15px;
+  @include mixins.box-shadow();
+  position: relative;
+  word-wrap: break-word;
+  align-self: flex-start;
+  @include mixins.border-radius(variables.$border-radius-medium);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 60px;
+
+  &.sent {
+    align-self: flex-end;
+    background-color: variables.$color-sent;
+    color: variables.$color-text;
+
+    &::before {
+      border-bottom-left-radius: 12px 11px;
+      border-right: 16px solid variables.$color-sent;
+      right: -5px;
+      transform: translate(0, -2px);
+    }
+
+    &::after {
+      background-color: variables.$color-secondary;
+      border-bottom-left-radius: 6px;
+      right: -40px;
+      transform: translate(-30px, -2px);
+      width: 10px;
+    }
+  }
+
+  &.received {
+    align-self: flex-start;
+    background-color: variables.$color-received;
+
+    &::after {
+      background-color: variables.$color-secondary;
+      border-bottom-right-radius: 8px;
+      left: -40px;
+      transform: translate(30px, -2px);
+      width: 10px;
+    }
+
+    &::before {
+      border-bottom-right-radius: 12px 11px;
+      border-left: 16px solid variables.$color-received;
+      left: -5px;
+      transform: translate(0, -1px);
+    }
+  }
+
+  &Text {
+    margin: 0;
+    &.found {
+      animation: blink 1.5s ease-in-out;
+    }
+  }
+
+  &Image {
+    //width: 100%;
+    max-height: 300px;
+    margin-bottom: 10px;
+    @include mixins.flex-center();
+
+    &Img {
+      //width: 100%;
+      object-fit: cover;
+      max-height: 300px;
+    }
+  }
+
+  & .time {
+    font-size: variables.$font-size-small;
+    color: variables.$color-gray;
+    margin: 0;
+  }
+
+  &Status {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    &Item {
+      margin: 0;
+    }
+  }
+}
+
+.messageItem::after,
+.messageItem::before {
+  bottom: -2px;
+  content: "";
+  height: 16px;
+  position: absolute;
+}
+
+.scaleInCenter {
+  @include mixins.animation(scaleInCenter, variables.$transition-medium, cubic-bezier(0.250, 0.460, 0.450, 0.940));
+}
+
+@include mixins.keyframes(scaleInCenter) {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@include mixins.keyframes(blink) {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: variables.$color-light;
+  }
+}

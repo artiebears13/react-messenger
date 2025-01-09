@@ -1,0 +1,25 @@
+@use "../../themes";
+@use "../../mixins";
+@use "../../variables";
+
+.chatContainer {
+  @include mixins.flex-center(column, flex-end);
+  height: calc(100vh - #{variables.$header-height});
+  position: relative;
+}
+
+
+.scaleInCenter {
+  @include mixins.animation(scaleInCenter, variables.$transition-medium, cubic-bezier(0.250, 0.460, 0.450, 0.940));
+}
+
+@include mixins.keyframes(scaleInCenter) {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

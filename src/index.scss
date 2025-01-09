@@ -1,0 +1,41 @@
+@use "themes";
+@use "variables";
+@use "mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: variables.$color-background;
+  color: variables.$color-text;
+  font-size: variables.$font-size-base;
+  font-family: variables.$font-family-base;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.header {
+  padding: 0 10px;
+  width: 100%;
+  height: variables.$header-height;
+  background-color: variables.$color-primary;
+  @include mixins.flex-center($justify: space-between);
+}
+
+.backButton {
+  @include mixins.button-reset;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.white {
+  color: variables.$color-light;
+}

@@ -1,0 +1,30 @@
+@use '../../variables';
+@use '../../mixins' as mixins;
+
+.chatList  {
+  height: 100%;
+}
+
+.chatListView  {
+  background-color: variables.$color-background;
+}
+
+.materialSymbolsOutlined {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.plus {
+  margin-left: 0;
+}
+
+.notFoundMessage {
+  margin-top: 40px;
+  @include mixins.flex-center(column);
+}
+
+.welcomeLabel{
+  text-align: center;
+}
+
+

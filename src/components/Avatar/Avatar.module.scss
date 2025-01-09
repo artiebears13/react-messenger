@@ -1,0 +1,16 @@
+@use '../../mixins';
+@use '../../variables';
+
+.Avatar {
+  &Container {
+    @include mixins.flex-center();
+    cursor: pointer;
+  }
+
+  &Image {
+    @include mixins.border-radius(variables.$border-radius-full);
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+  }
+}

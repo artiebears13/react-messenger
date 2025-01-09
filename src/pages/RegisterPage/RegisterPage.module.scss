@@ -1,0 +1,35 @@
+@use "../../variables";
+@use "../../mixins";
+
+.register {
+  &Page {
+    @include mixins.flex-center(column);
+  }
+  &Form{
+    @include mixins.flex-center(column);
+    border: 1px variables.$color-chat-border solid;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: variables.$color-background;
+    gap: 20px;
+    &Input{
+      width: 200px;
+      height: 40px;
+      padding: 10px;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      background-color: variables.$color-input;
+    }
+    &Button{
+      width: 200px;
+      background-color: variables.$color-primary;
+      color: white;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      height: 40px;
+    }
+  }
+
+}

@@ -1,0 +1,49 @@
+/* src/components/LazyImage/LazyImage.module.scss */
+.imageWrapper {
+  position: relative;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.placeholder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  background-color: #ffe6e6;
+  color: #cc0000;
+}
+
+.image {
+  height: auto;
+  width: 100%;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

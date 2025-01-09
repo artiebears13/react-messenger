@@ -1,0 +1,38 @@
+$color-primary: var(--color-primary);
+$color-primary-darken: var(--color-primary-darken);
+$color-secondary: var(--color-secondary);
+$color-background: var(--color-background);
+$color-background-darken: var(--color-background-darken);
+$color-text: var(--color-text);
+$color-light: var(--color-light);
+$color-dark: var(--color-dark);
+$color-gray: var(--color-gray);
+$color-chat-border: var(--color-chat-border);
+$color-gray-darken: var(--color-gray-darken);
+$color-received: var(--color-received);
+$color-sent: var(--color-sent);
+$color-input: var(--color-input);
+
+$theme: var(--theme);
+
+$font-family-base: Helvetica, Arial, sans-serif;
+$font-size-base: 15px;
+$font-size-small: 10px;
+$font-size-large: 18px;
+
+$border-radius-small: 5px;
+$border-radius-medium: 10px;
+$border-radius-large: 25px;
+$border-radius-full: 50%;
+
+$transition-fast: 0.2s;
+$transition-medium: 0.3s;
+$transition-slow: 0.5s;
+
+$header-height: 60px;
+
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large-desktop: 1200px;

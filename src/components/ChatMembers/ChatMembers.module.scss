@@ -1,0 +1,28 @@
+@use "../../mixins";
+@use "../../variables";
+
+.ChatMembers {
+  &Container{
+    @include mixins.flex-center(column);
+    width: 100%;
+
+  }
+  &Item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    border: 1px solid variables.$color-chat-border;
+    padding: 10px;
+
+    &:hover{
+      cursor: pointer;
+      background-color: variables.$color-chat-border;
+    }
+
+    &Name {
+      align-self: center;
+    }
+  }
+}

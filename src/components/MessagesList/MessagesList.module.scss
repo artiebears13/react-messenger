@@ -1,0 +1,22 @@
+@use "../../variables";
+@use "../../mixins";
+
+.messagesContainer {
+  width: 100%;
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: variables.$color-secondary;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+}
+.messagesList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  @include mixins.flex-center(column);
+}

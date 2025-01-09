@@ -1,0 +1,48 @@
+@use '../../variables';
+@use '../../mixins';
+
+.audioPlayer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .playButton {
+    height: 48px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .progressContainer {
+    display: flex;
+    gap: 3px;
+    width: 120px; /* Ширина контейнера для столбиков */
+    height: 30px;
+    align-items: flex-end;
+  }
+
+  .bar {
+    width: 4px;
+    background: linear-gradient(180deg, #4d8de3 0%, #3573d4 100%);
+    border-radius: 2px;
+    height: 10px;
+    transition: height 0.3s ease, background 0.3s ease;
+
+    &.active {
+      background: linear-gradient(180deg, #3573d4 0%, #1d4c99 100%);
+    }
+  }
+
+  .timeInfo {
+    font-size: 14px;
+    color: variables.$color-text;
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,101 @@
+@use '../../../variables';
+@use '../../../mixins';
+@import "../../../pages/SelfProfilePage/SelfProfilePage.module.scss";
+
+
+.ProfilePhoto {
+  &Preview {
+    color: variables.$color-text;
+    width: 100px;
+    height: 100px;
+    background-color: variables.$color-gray-darken;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    @include mixins.flex-center(row);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    p {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  &Container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &Change {
+      display: none;
+      background-color: variables.$color-gray;
+      opacity: 0.6;
+      color: variables.$color-text;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:hover &Change {
+      display: flex;
+    }
+
+
+  }
+}
+
+.slideInBottom {
+  -webkit-animation: slideInBottom 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slideInBottom 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes slideInBottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInBottom {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+

@@ -1,0 +1,68 @@
+@use '../../mixins';
+@use '../../variables';
+
+.ProfilePage {
+  @include mixins.flex-center(column);
+  &Container {
+    position: relative;
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: variables.$color-text;
+    border-radius: 15px;
+    background-color: variables.$color-background-darken;
+    width: 320px;
+    @include mixins.media(variables.$breakpoint-mobile){
+      width: 90%;
+    }
+  }
+  &Description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+  }
+  &Key{
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  &Field{
+    width: 100%;
+    border-bottom: 1px solid variables.$color-chat-border;
+    padding-top: 10px;
+  }
+  &EditButton{
+    outline: none;
+    border: 1px solid variables.$color-primary;
+    background-color: variables.$color-primary;
+    border-radius: 10px;
+    color: variables.$color-light;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.9;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  &EditButtonsContainer{
+    width: 100%;
+    @include mixins.flex-center();
+    justify-content: space-between;
+  }
+  &EditButtonIcon{
+    @include mixins.flex-center();
+    color: variables.$color-primary;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}

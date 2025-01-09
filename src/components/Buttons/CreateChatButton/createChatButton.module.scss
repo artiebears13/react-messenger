@@ -1,0 +1,47 @@
+@use '../../../mixins';
+@use '../../../variables';
+
+.createChatButton  {
+
+  background-color: #007aff;
+  color: variables.$color-light;
+  border: none;
+  @include mixins.border-radius(variables.$border-radius-full);
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  cursor: pointer;
+  @include mixins.box-shadow(0, 4px, 6px, rgba(variables.$color-dark, 0.1));
+  @include mixins.transition(background-color);
+
+  &:hover {
+    background-color: #0051a8;
+  }
+
+  &Content {
+    display: flex;
+    @include mixins.flex-center();
+  }
+  &Container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+.pulseAnimation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 81, 168, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(0, 81, 168, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 81, 168, 0.8);
+  }
+}
+

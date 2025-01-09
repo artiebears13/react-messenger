@@ -1,0 +1,25 @@
+@use '../../../variables';
+@use '../../../mixins';
+@import "../../../pages/SelfProfilePage/SelfProfilePage.module.scss";
+
+.profileAbout {
+  &Title {
+    font-size: 12px;
+  }
+  &Text{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+  }
+  &Input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    color: variables.$color-text;
+  }
+}
+
+

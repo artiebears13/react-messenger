@@ -1,0 +1,188 @@
+@use "../../../variables";
+@use "../../../mixins";
+@import "../../../index";
+
+
+.sendIcon{
+  font-size: 16px;
+}
+.attachmentBtn{
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: variables.$color-text;
+  opacity: 0.8;
+  cursor: pointer;
+  &:hover{
+    opacity: 1;
+  }
+  &:disabled{
+    @include mixins.disabled();
+    &:hover{
+      @include mixins.disabled();
+    }
+  }
+}
+
+.input{
+  &Container{
+    background-color: variables.$color-background;
+    width: 100%;
+    @include mixins.flex-center(column);
+    &Attachment{
+      margin-top: 10px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid variables.$color-gray;
+      border-radius: 15px;
+      height: 100px;
+      & > img{
+        width: 100%;
+        height: 100%;
+      }
+      &Close{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border: none;
+        top: 5px;
+        right: 5px;
+        border-radius: 50%;
+        @include mixins.flex-center();
+        color: variables.$color-text;
+        background-color: variables.$color-gray;
+        opacity: 0.8;
+        cursor: pointer;
+        &:hover{
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+}
+.form {
+  @include mixins.flex-center();
+  width: 100%;
+  max-width: 800px;
+  @include mixins.border-radius(variables.$border-radius-large);
+  padding: 0 10px;
+  background-color: variables.$color-background;
+  border: 1px solid variables.$color-gray;
+
+  &Container {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    background-color: variables.$color-background;
+    @include mixins.flex-center();
+
+  }
+
+  &Input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    @include mixins.border-radius(variables.$border-radius-large - 5px);
+    background-color: transparent;
+    font-size: 14px;
+    word-wrap: break-word;
+    margin-right: 10px;
+    color: variables.$color-text;
+    &:disabled{
+      @include mixins.disabled();
+    }
+
+  }
+}
+
+.sendBtn {
+  background-color: #4d8de3;
+  height: 30px;
+  width: 30px;
+  border: none;
+  padding: 10px;
+  @include mixins.border-radius(variables.$border-radius-full);
+  cursor: pointer;
+  @include mixins.flex-center();
+  @include mixins.transition(background-color);
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  & .materialSymbolsOutlined {
+    font-size: 20px;
+    color: variables.$color-light;
+  }
+  &:disabled{
+    @include mixins.disabled();
+    &:hover{
+      background-color: #4d8de3;
+
+    }
+  }
+}
+
+.mapAttachment{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &Container{
+    @include mixins.flex-center(column);
+    gap: 20px;
+    background-color: variables.$color-background;
+    padding: 40px;
+    border-radius: 20px;
+  }
+
+  &Button{
+    background-color: variables.$color-primary;
+    padding: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+
+  }
+}
+
+.voiceBtn{
+  margin-left: 10px;
+  background-color: #4d8de3;
+  height: 30px;
+  width: 30px;
+  border: none;
+  padding: 10px;
+  @include mixins.border-radius(variables.$border-radius-full);
+  cursor: pointer;
+  @include mixins.flex-center();
+  @include mixins.transition(background-color);
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  & .materialSymbolsOutlined {
+    font-size: 20px;
+    color: variables.$color-light;
+  }
+  &:disabled{
+    @include mixins.disabled();
+    &:hover{
+      background-color: #4d8de3;
+
+    }
+  }
+}

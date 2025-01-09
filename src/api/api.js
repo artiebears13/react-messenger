@@ -52,7 +52,10 @@ export async function register(userData) {
 
     if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.detail || 'Ошибка при регистрации');
+        if (errorData.password){
+            throw new Error(errorData.password[0]);
+        }
+        throw new Error(errorData || 'Ошибка при регистрации');
     }
 
     return await response.json();

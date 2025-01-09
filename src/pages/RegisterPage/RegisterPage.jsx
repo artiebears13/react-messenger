@@ -33,14 +33,27 @@ function RegisterPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await register(formData); // Регистрация пользователя
+            const answer = await register(formData); // Регистрация пользователя
+            console.log(answer);
             const { access, refresh } = await apiLogin(formData.username, formData.password); // Логин после регистрации
             dispatch(loginAction({ accessToken: access, refreshToken: refresh })); // Сохраняем токены в Redux
             await dispatch(fetchCurrentUser()); // Загружаем текущего пользователя
             navigate('/'); // Перенаправляем на главную страницу
         } catch (err) {
+            console.log({err: err.message});
+            if (err.message.includes('This password is too short')) {
+              setError("Пароль должен содержать 8 символов");
+              return
+            }
+            if (err.message.includes('This password is too common')) {
+                setError("Слишком частый пароль, попробуйте другой");
+                return
+            }
+            if (err.message.includes('This password is entirely numeric.')) {
+                setError("Пароль должен содержать цифры и буквы");
+                return
+            }
             setError('Ошибка при регистрации. Пожалуйста, попробуйте снова.');
-            console.error('Ошибка при регистрации:', err);
         }
     };
 

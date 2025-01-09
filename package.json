@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://artiebears13.github.io/2024-2-VK-EDU-Frontend-A-Medvedev/",
+  "homepage": "https://artiebears13.github.io/react-messenger/",
   "scripts": {
     "test": "",
     "predeploy": "npm run build",

@@ -50,7 +50,7 @@ function RegisterPage() {
                 return
             }
             if (err.message.includes('This password is entirely numeric.')) {
-                setError("Пароль должен содержать цифры и буквы");
+                setError("Пароль должен содержать цифры и буквы!");
                 return
             }
             setError('Ошибка при регистрации. Пожалуйста, попробуйте снова.');
